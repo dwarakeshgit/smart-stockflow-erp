@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smart Tracking | StockFlow</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/dashboard.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+<div class="app-layout">
+  <aside class="sidebar">
+    <div class="brand">📦 STOCKFLOW</div>
+    <nav>
+      <a href="dashboard.html">🏠 Dashboard</a>
+      <a href="inventory.html">📦 Inventory</a>
+      <a href="production.html">🏭 Production</a>
+      <a href="orders.html">🧾 Orders</a>
+      <a href="procurement.html">🛒 Procurement</a>
+      <a href="reports.html">📊 Reports</a>
+      <a href="tracking.html" class="active">🎯 Smart Tracking</a>
+      <a href="roi.html">💹 ROI Calculator</a>
+      <a href="tour.html">▶️ Product Tour</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <div class="topbar"><h1>Smart Tracking</h1></div>
+    <div class="page-body">
+      <div class="card mb-16">
+        <div class="section-title">Get amazing results using smart tracking</div>
+        <div class="feature-grid">
+          <div class="feature-card"><div class="icon">📦</div><h3>Grow Orders</h3></div>
+          <div class="feature-card"><div class="icon">🚚</div><h3>Avoid Late Deliveries</h3></div>
+          <div class="feature-card"><div class="icon">📭</div><h3>Reduce Dead Stock</h3></div>
+          <div class="feature-card"><div class="icon">⏱️</div><h3>Track Production Delays</h3></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Live Snapshot</div>
+        <div id="trackingSnapshot" class="text-muted">Loading…</div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="/js/main.js"></script>
+<script src="/js/tracking.js"></script>
+</body>
+</html>

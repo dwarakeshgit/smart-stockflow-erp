@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Production | StockFlow</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/dashboard.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+<div class="app-layout">
+  <aside class="sidebar">
+    <div class="brand">📦 STOCKFLOW</div>
+    <nav>
+      <a href="dashboard.html">🏠 Dashboard</a>
+      <a href="inventory.html">📦 Inventory</a>
+      <a href="production.html" class="active">🏭 Production</a>
+      <a href="orders.html">🧾 Orders</a>
+      <a href="procurement.html">🛒 Procurement</a>
+      <a href="reports.html">📊 Reports</a>
+      <a href="tracking.html">🎯 Smart Tracking</a>
+      <a href="roi.html">💹 ROI Calculator</a>
+      <a href="tour.html">▶️ Product Tour</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <div class="topbar">
+      <h1>Production</h1>
+      <button class="btn btn-primary" id="addProductionBtn">+ New Production Record</button>
+    </div>
+    <div class="page-body">
+
+      <div class="card mb-16">
+        <div class="section-title">Production Status</div>
+        <table>
+          <thead><tr><th>Production ID</th><th>FG Name</th><th>Target Qty.</th><th>Completed Qty.</th><th>Status</th><th>Total Cost</th><th>Actions</th></tr></thead>
+          <tbody id="productionTable"><tr><td colspan="7" class="text-muted">Loading…</td></tr></tbody>
+        </table>
+      </div>
+
+      <div class="card mb-16">
+        <div class="section-title">Advanced Production Features</div>
+        <div class="feature-grid">
+          <div class="feature-card"><div class="icon">🗓️</div><h3>Smart Planning</h3></div>
+          <div class="feature-card"><div class="icon">🔢</div><h3>Multi-level BOM</h3></div>
+          <div class="feature-card"><div class="icon">✅</div><h3>Role-wise Access</h3></div>
+          <div class="feature-card"><div class="icon">📋</div><h3>Quality Approval</h3></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="modal-overlay" id="productionModal">
+  <div class="modal-box">
+    <h2 id="productionModalTitle">New Production Record</h2>
+    <form id="productionForm">
+      <input type="hidden" id="productionRecordId">
+      <div class="form-group"><label>Production ID</label><input type="text" id="productionId" placeholder="e.g. PID0007" required></div>
+      <div class="form-group"><label>FG (Product) Name</label><input type="text" id="productName" required></div>
+      <div class="form-row">
+        <div class="form-group"><label>Target Quantity</label><input type="number" id="targetQuantity" required></div>
+        <div class="form-group"><label>Completed Quantity</label><input type="number" id="completedQuantity" value="0"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Status</label>
+          <select id="status">
+            <option>PLANNED</option>
+            <option>PENDING</option>
+            <option>WIP</option>
+            <option>IN-TESTING</option>
+            <option>COMPLETED</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Total Cost (₹)</label><input type="number" id="totalCost" value="0"></div>
+      </div>
+      <div class="nav-row">
+        <button type="button" class="btn btn-secondary" id="cancelProductionBtn">Cancel</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/js/main.js"></script>
+<script src="/js/production.js"></script>
+</body>
+</html>

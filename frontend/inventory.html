@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Inventory | StockFlow</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/dashboard.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+<div class="app-layout">
+  <aside class="sidebar">
+    <div class="brand">📦 STOCKFLOW</div>
+    <nav>
+      <a href="dashboard.html">🏠 Dashboard</a>
+      <a href="inventory.html" class="active">📦 Inventory</a>
+      <a href="production.html">🏭 Production</a>
+      <a href="orders.html">🧾 Orders</a>
+      <a href="procurement.html">🛒 Procurement</a>
+      <a href="reports.html">📊 Reports</a>
+      <a href="tracking.html">🎯 Smart Tracking</a>
+      <a href="roi.html">💹 ROI Calculator</a>
+      <a href="tour.html">▶️ Product Tour</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <div class="topbar">
+      <h1>Inventory</h1>
+      <button class="btn btn-primary" id="addProductBtn">+ Add Product</button>
+    </div>
+    <div class="page-body">
+
+      <div class="two-col mb-16">
+        <div class="card">
+          <div class="section-title">
+            <span>Stock Count &amp; Valuation</span>
+            <input type="text" class="search-input" style="width:200px;" id="searchInput" placeholder="Search item...">
+          </div>
+          <table>
+            <thead><tr><th>Item Name</th><th>Category</th><th>Current Stock</th><th>Unit Price</th><th>Actions</th></tr></thead>
+            <tbody id="productsTable"><tr><td colspan="5" class="text-muted">Loading…</td></tr></tbody>
+          </table>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="section-title">Stock Valuation</div>
+          <div style="font-size:32px;font-weight:800;color:var(--success);" id="valuationAmt">–</div>
+          <p class="text-muted mt-16">Total value of all inventory on hand</p>
+        </div>
+      </div>
+
+      <div class="card mb-16">
+        <div class="section-title">
+          <span>Stock Movement History</span>
+          <button class="btn btn-outline btn-sm" id="addMovementBtn">+ Log Movement</button>
+        </div>
+        <table>
+          <thead><tr><th>Date</th><th>Item</th><th>Changed Via</th><th>Change Qty</th><th>Changed By</th></tr></thead>
+          <tbody id="movementsTable"><tr><td colspan="5" class="text-muted">Loading…</td></tr></tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Smart Inventory Features</div>
+        <div class="feature-grid">
+          <div class="feature-card"><div class="icon">⚠️</div><h3>Low-stock Alerts</h3><p class="sub" id="lowStockNote">–</p></div>
+          <div class="feature-card"><div class="icon">🖥️</div><h3>Intelligent Dashboard</h3><p class="sub">Live KPIs on the Dashboard page</p></div>
+          <div class="feature-card"><div class="icon">💰</div><h3>Multiple Prices</h3><p class="sub">(Ex. MRP, Dealer price etc.)</p></div>
+          <div class="feature-card"><div class="icon">✅</div><h3>Inventory Approval</h3><p class="sub">Role-based approval workflow</p></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Add/Edit Product Modal -->
+<div class="modal-overlay" id="productModal">
+  <div class="modal-box">
+    <h2 id="productModalTitle">Add Product</h2>
+    <form id="productForm">
+      <input type="hidden" id="productId">
+      <div class="form-group"><label>Item Name</label><input type="text" id="itemName" required></div>
+      <div class="form-row">
+        <div class="form-group"><label>Category</label><input type="text" id="category" value="General"></div>
+        <div class="form-group"><label>Supplier</label><input type="text" id="supplier"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Current Stock</label><input type="number" id="currentStock" required></div>
+        <div class="form-group"><label>Unit Price (₹)</label><input type="number" id="unitPrice" required></div>
+      </div>
+      <div class="form-group"><label>Minimum Stock</label><input type="number" id="minimumStock" value="10"></div>
+      <div class="nav-row">
+        <button type="button" class="btn btn-secondary" id="cancelProductBtn">Cancel</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Add Movement Modal -->
+<div class="modal-overlay" id="movementModal">
+  <div class="modal-box">
+    <h2>Log Stock Movement</h2>
+    <form id="movementForm">
+      <div class="form-group">
+        <label>Product</label>
+        <select id="movementProductId" required></select>
+      </div>
+      <div class="form-group">
+        <label>Changed Via</label>
+        <select id="changedVia">
+          <option>Process FG</option>
+          <option>Inward Document</option>
+          <option>Manual Adjustment</option>
+          <option>GRN / Quality Report</option>
+          <option>Sales Order</option>
+          <option>Purchase Order</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Change Quantity (use negative to reduce)</label><input type="number" id="changeQuantity" required></div>
+      <div class="form-group"><label>Changed By</label><input type="text" id="changedBy" required></div>
+      <div class="nav-row">
+        <button type="button" class="btn btn-secondary" id="cancelMovementBtn">Cancel</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/js/main.js"></script>
+<script src="/js/inventory.js"></script>
+</body>
+</html>

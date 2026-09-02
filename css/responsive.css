@@ -1,0 +1,18 @@
+@media (max-width: 900px) {
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+  .two-col { grid-template-columns: 1fr; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .app-layout { flex-direction: column; }
+  .sidebar { width: 100%; height: auto; position: relative; }
+  .sidebar nav { display: flex; overflow-x: auto; }
+  .sidebar nav a { border-left: none; border-bottom: 3px solid transparent; white-space: nowrap; }
+  .sidebar nav a.active { border-left: none; border-bottom-color: white; }
+  .summary-grid { grid-template-columns: 1fr; }
+  .page-body { padding: 18px; }
+  table { font-size: 12px; }
+  .modal-box { width: 95%; }
+}

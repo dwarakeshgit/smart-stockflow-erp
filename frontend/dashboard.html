@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard | StockFlow</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/dashboard.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+<div class="app-layout">
+  <aside class="sidebar">
+    <div class="brand">📦 STOCKFLOW</div>
+    <nav>
+      <a href="dashboard.html">🏠 Dashboard</a>
+      <a href="inventory.html">📦 Inventory</a>
+      <a href="production.html">🏭 Production</a>
+      <a href="orders.html">🧾 Orders</a>
+      <a href="procurement.html">🛒 Procurement</a>
+      <a href="reports.html">📊 Reports</a>
+      <a href="tracking.html">🎯 Smart Tracking</a>
+      <a href="roi.html">💹 ROI Calculator</a>
+      <a href="tour.html">▶️ Product Tour</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <div class="topbar">
+      <h1>Dashboard</h1>
+      <span class="text-muted">Welcome back, Admin</span>
+    </div>
+    <div class="page-body">
+      <div class="summary-grid" id="summaryGrid">
+        <div class="summary-card"><div class="label">Total Products</div><div class="value">–</div></div>
+        <div class="summary-card alert"><div class="label">Low Stock Items</div><div class="value">–</div></div>
+        <div class="summary-card"><div class="label">Total Stock Value</div><div class="value">–</div></div>
+        <div class="summary-card warn"><div class="label">Pending Orders</div><div class="value">–</div></div>
+        <div class="summary-card ok"><div class="label">Production In Progress</div><div class="value">–</div></div>
+        <div class="summary-card"><div class="label">Total Orders</div><div class="value">–</div></div>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <div class="section-title">Recent Stock Movements</div>
+          <table id="recentMovementsTable">
+            <thead><tr><th>Date</th><th>Item</th><th>Via</th><th>Qty</th></tr></thead>
+            <tbody><tr><td colspan="4" class="text-muted">Loading…</td></tr></tbody>
+          </table>
+        </div>
+        <div class="card">
+          <div class="section-title">Alerts</div>
+          <div id="alertsBox" class="text-muted">Loading…</div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="/js/main.js"></script>
+<script src="/js/dashboard.js"></script>
+</body>
+</html>

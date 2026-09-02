@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Orders | StockFlow</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/dashboard.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+<div class="app-layout">
+  <aside class="sidebar">
+    <div class="brand">📦 STOCKFLOW</div>
+    <nav>
+      <a href="dashboard.html">🏠 Dashboard</a>
+      <a href="inventory.html">📦 Inventory</a>
+      <a href="production.html">🏭 Production</a>
+      <a href="orders.html" class="active">🧾 Orders</a>
+      <a href="procurement.html">🛒 Procurement</a>
+      <a href="reports.html">📊 Reports</a>
+      <a href="tracking.html">🎯 Smart Tracking</a>
+      <a href="roi.html">💹 ROI Calculator</a>
+      <a href="tour.html">▶️ Product Tour</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <div class="topbar">
+      <h1>Sales &amp; Purchase Orders</h1>
+      <button class="btn btn-primary" id="addOrderBtn">+ New Order</button>
+    </div>
+    <div class="page-body">
+
+      <div class="card mb-16">
+        <div class="section-title">Order Status</div>
+        <table>
+          <thead><tr><th>Transaction Name</th><th>Type</th><th>Invoice Status</th><th>Goods Status</th><th>Amount</th><th>Timeline</th></tr></thead>
+          <tbody id="ordersTable"><tr><td colspan="6" class="text-muted">Loading…</td></tr></tbody>
+        </table>
+      </div>
+
+      <div class="card" id="timelineCard" style="display:none;">
+        <div class="section-title"><span id="timelineTitle">Order Timeline</span><button class="btn btn-sm btn-secondary" onclick="document.getElementById('timelineCard').style.display='none'">Close</button></div>
+        <div id="timelineBody"></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="modal-overlay" id="orderModal">
+  <div class="modal-box">
+    <h2>New Order</h2>
+    <form id="orderForm">
+      <div class="form-group"><label>Transaction Name</label><input type="text" id="transactionName" placeholder="e.g. Order for Globe Valve" required></div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Type</label>
+          <select id="type"><option>Sales</option><option>Purchase</option></select>
+        </div>
+        <div class="form-group"><label>Amount (₹)</label><input type="number" id="amount" required></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Customer</label><input type="text" id="customer"></div>
+        <div class="form-group"><label>Supplier</label><input type="text" id="supplier"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Invoice Status</label>
+          <select id="invoiceStatus"><option>Invoice Pending</option><option>Invoice Created</option></select>
+        </div>
+        <div class="form-group">
+          <label>Goods Status</label>
+          <select id="goodsStatus"><option>Not Dispatched</option><option>Partially Dispatched</option><option>Dispatched</option></select>
+        </div>
+      </div>
+      <div class="nav-row">
+        <button type="button" class="btn btn-secondary" id="cancelOrderBtn">Cancel</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/js/main.js"></script>
+<script src="/js/orders.js"></script>
+</body>
+</html>

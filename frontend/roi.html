@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ROI Calculator | StockFlow</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/dashboard.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+<div class="app-layout">
+  <aside class="sidebar">
+    <div class="brand">📦 STOCKFLOW</div>
+    <nav>
+      <a href="dashboard.html">🏠 Dashboard</a>
+      <a href="inventory.html">📦 Inventory</a>
+      <a href="production.html">🏭 Production</a>
+      <a href="orders.html">🧾 Orders</a>
+      <a href="procurement.html">🛒 Procurement</a>
+      <a href="reports.html">📊 Reports</a>
+      <a href="tracking.html">🎯 Smart Tracking</a>
+      <a href="roi.html" class="active">💹 ROI Calculator</a>
+      <a href="tour.html">▶️ Product Tour</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <div class="topbar"><h1>ROI Calculator</h1></div>
+    <div class="page-body">
+      <div class="card" style="max-width:600px;">
+        <div class="section-title">Wondering what's the ROI of implementing StockFlow?</div>
+        <div class="form-group"><label>Current Monthly Stock Loss / Wastage (₹)</label><input type="number" id="stockLoss" value="200000"></div>
+        <div class="form-group"><label>Monthly Hours Spent on Manual Tracking</label><input type="number" id="manualHours" value="80"></div>
+        <div class="form-group"><label>Average Hourly Cost of Staff (₹)</label><input type="number" id="hourlyRate" value="400"></div>
+        <div class="form-group"><label>Monthly Late-delivery Penalty Cost (₹)</label><input type="number" id="penaltyCost" value="50000"></div>
+        <button class="btn btn-primary" id="calcRoiBtn">Calculate ROI Now! →</button>
+
+        <div id="roiResult" class="mt-16" style="display:none;">
+          <div class="card" style="background:var(--grey-light);">
+            <p>Estimated Monthly Savings: <strong id="monthlySavings"></strong></p>
+            <p>Estimated Annual Savings: <strong id="annualSavings"></strong></p>
+            <p class="text-muted mt-16">Assumes StockFlow reduces stock wastage by 90%, manual tracking time by 70%, and late-delivery penalties by 80% — in line with the smart features shown in the Product Tour.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="/js/main.js"></script>
+<script src="/js/roi.js"></script>
+</body>
+</html>
