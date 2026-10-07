@@ -1,5 +1,3 @@
-# Smart StockFlow ERP
-
 A full-stack inventory and business operations management system built with HTML, CSS, JavaScript, Node.js, Express.js, and MongoDB.
 
 Smart StockFlow ERP provides a centralized dashboard for managing inventory, stock movements, production, orders, procurement, reports, KPI tracking, smart tracking, and ROI analysis.
@@ -23,6 +21,10 @@ Smart StockFlow ERP provides a centralized dashboard for managing inventory, sto
 - 🎨 Modern responsive user interface
 - 🔄 Real database-backed data
 
+## 📸 Demo
+
+![Smart StockFlow ERP Dashboard](screenshots/dashboard.png)
+
 ## 🛠️ Technology Stack
 
 ### Frontend
@@ -40,7 +42,6 @@ Smart StockFlow ERP provides a centralized dashboard for managing inventory, sto
 
 - MongoDB
 - Mongoose
-
 ## 🏗️ System Architecture
 
 ```text
